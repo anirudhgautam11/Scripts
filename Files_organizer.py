@@ -17,10 +17,9 @@ extensions={'audio': ['.aif', '.cdale', '.midio', '.mp3', '.ogg', '.wav', '.wpl'
       'spreadsheet ': ['.ods', '.xlr', '.xls', '.xlsx'],
         'executables': ['.apk', '.bat', '.bin', '.cgi', '.pl', '.com', '.exe', '.gadget', '.jar', '.wsf'], 
          'presentations': ['.key', '.odp', '.pps', '.ppt', '.pptx'],'Torrent Files':['.torrent'] ,'internetFiles': ['.asp', '.aspx', '.cer', '.cfm', '.cgi', '.pl', '.css', '.htm', '.html', '.js', '.jsp', '.part', '.php', '.rss', '.xhtml'], 'systemFiles': ['.bak', '.cab', '.cfg', '.cpl', '.cur', '.dll', '.dmp', '.drv', '.icns', '.ico', '.ini', '.lnk', '.msi', '.sys', '.tmp']}
-cwd = os.getcwd() #Current working directory
+cwd = os.getcwd() 
 
-
-def makedir(folderName):
+def makedir(folderName):   #function to make category directories
     if not os.path.exists(cwd+"\\"+folderName):
         
         try:
@@ -34,26 +33,14 @@ def makedir(folderName):
     else:
         print("Dir already exists")
         return (os.path.join(cwd,folderName))
-
-
-        
-        
-
-
-
-
-
-def movein(filePath,destPath):
+      
+def movein(filePath,destPath):   #function to move files.
     try:
         shutil.move(filePath,destPath)
     except:
         print(filePath,"cannot be moved")
     else:
         print("success!")
-
-    
-
-
 
 filesAndFolders = os.listdir(cwd)   #Will return a list of all files and folders in perticular directory
 
@@ -79,17 +66,4 @@ for i in filesAndFolders:
                 dest_path = makedir(k)
                 movein(filepath,str(dest_path))
                 
-                
-                
-            
-         
-
-            
-            
-
-
-            
-        
-
-
-
+   
